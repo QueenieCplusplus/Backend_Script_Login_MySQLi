@@ -12,10 +12,14 @@
     
     // 新增 SID
     
-     mysqli_stmt_bind_param($stmt, "si", $param_password, $param_id);
+    if($stmt = mysqli_prepare($link, $sql)){
+    
+      mysqli_stmt_bind_param($stmt, "si", $param_password, $param_id);
             
-    // Set parameters
-     $param_password = password_hash($new_password, PASSWORD_DEFAULT);
-     $param_id = $_SESSION["id"];
+      // Set parameters
+      $param_password = password_hash($new_password, PASSWORD_DEFAULT);
+      $param_id = $_SESSION["id"];
+      
+     }
 
 ref: https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
