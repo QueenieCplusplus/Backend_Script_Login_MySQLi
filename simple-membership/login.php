@@ -23,6 +23,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username_err = "Please enter username.";
     } else{
         $username = trim($_POST["username"]);
+        // https://www.w3school.com.cn/php/func_string_trim.asp
+     
     }
     
     // Check if password is empty
